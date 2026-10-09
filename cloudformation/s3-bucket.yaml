@@ -11,7 +11,7 @@ Parameters:
       - prod
 
 Resources:
-  MyS3CfnCicdBucket:
+  sambastenS3CfnCicdBucket:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: !Sub '${AWS::StackName}-${Environment}-bucket'
@@ -24,4 +24,4 @@ Resources:
 Outputs:
   BucketName:
     Description: 'Name of created S3 bucket'
-    Value: !Ref MyS3CfnCicdBucket
+    Value: !Ref sambastenS3CfnCicdBucket
