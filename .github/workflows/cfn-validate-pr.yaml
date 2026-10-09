@@ -1,4 +1,4 @@
-name: "Validate CFn on PR"
+name: "Validate CF stack on PR"
 
 on:
     pull_request:
