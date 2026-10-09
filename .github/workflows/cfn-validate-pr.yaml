@@ -24,7 +24,7 @@ jobs:
             
             - name: Validate CF template
               run: |
-                aws cloudformation validate-template --template-body file:://cloudformation/s3-bucket.yaml
+                aws cloudformation validate-template --template-body file://cloudformation/s3-bucket.yaml
             
             - name: Deploy stack
               run: |
@@ -37,10 +37,10 @@ jobs:
                 github-token: ${{secrets.GITHUB_TOKEN}}
                 script: |
                   github.rest.issues.createComment({
-                    issue_number: context.issue.number
-                    owner: context.repo.owner
-                    repo: context.repo.repo
-                    body: 'CloudFormation test stack deployed. Stack name: r-test-stack-${{github.event.pull_request.number}}'
+                    issue_number: context.issue.number,
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    body: 'CloudFormation test stack deployed. Stack name: pr-test-stack-${{github.event.pull_request.number}}'
                   })
                     
     clean-up-on-merge:
@@ -57,7 +57,7 @@ jobs:
           - name: Delete test stack
             run: |
               stackname= "pr-test-stack-${{github.event.pull_request.number}}"  
-              aws cloudformation delete-stack --stack-name stackname 
+              aws cloudformation delete-stack --stack-name $stackname 
         
 
 

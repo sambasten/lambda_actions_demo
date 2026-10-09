@@ -9,7 +9,6 @@ Parameters:
       - test
       - staging
       - prod
-  
 
 Resources:
   MyS3Bucket:
@@ -19,8 +18,10 @@ Resources:
       Tags:
         - Key: Environment
           Value: !Ref Environment
+        - Key: Purpose
+          Value: Github actions testing
 
 Outputs:
   BucketName:
-    Description: 'Name of created s3 bucket'
+    Description: 'Name of created S3 bucket'
     Value: !Ref MyS3Bucket
