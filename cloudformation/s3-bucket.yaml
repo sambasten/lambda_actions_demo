@@ -19,6 +19,8 @@ Resources:
       Tags:
         - Key: Environment
           Value: !Ref Environment
+        - Key: Environment
+          Value: Github actions testing
 
 Outputs:
   BucketName:
