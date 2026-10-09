@@ -31,7 +31,7 @@ jobs:
             - name: Deploy stack
               run: |
                 stackname="pr-test-stack-${{github.event.pull_request.number}}"  
-                aws cloudformation create-stack --stack-name $stackname --template-body file://cloudformation/s3-bucket.yaml
+                aws cloudformation create-stack --stack-name $stackname --template-body file://cloudformation/s3-bucket.yaml --no-fail-on-empty-changeset
 
             - name: Comment on PR
               uses: actions/github-script@v6
