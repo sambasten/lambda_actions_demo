@@ -2,7 +2,6 @@ name: "Validate CF stack on PR"
 
 on:
     pull_request:
-      types: [opened, synchronize, reopened, closed]
       paths: 
         - 'cloudformation/**'
         - '.github/workflows/cfn-validate-pr.yaml'
@@ -13,7 +12,6 @@ permissions:
 
 jobs:
     validate-pr:
-        if: github.event.action != 'closed'
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v1
@@ -47,7 +45,7 @@ jobs:
                   })
                     
     clean-up-on-merge:
-        if: github.event.action == 'closed'
+        if: github.event.pull_request.merged == true
         runs-on: ubuntu-latest
         steps:
           - name: Configure AWS creds
