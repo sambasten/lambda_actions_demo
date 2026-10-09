@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: 'AWS CloudFormation S3 bucket for CI/CD workflow'
+Description: 'AWS CloudFormation S3 bucket for CI/CD workflow test'
 
 Parameters:
   Environment:
