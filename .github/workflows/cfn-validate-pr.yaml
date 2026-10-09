@@ -4,6 +4,7 @@ on:
     pull_request:
       paths: 
         - 'cloudformation/**'
+        - '.github/workflows/cfn-validate-pr.yaml'
 
 permissions:
     pull-requests: write
