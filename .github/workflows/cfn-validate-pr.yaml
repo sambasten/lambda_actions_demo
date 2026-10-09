@@ -2,6 +2,7 @@ name: "Validate CF stack on PR"
 
 on:
     pull_request:
+      types: [opened, synchronize, closed]
       paths: 
         - 'cloudformation/**'
         - '.github/workflows/cfn-validate-pr.yaml'
