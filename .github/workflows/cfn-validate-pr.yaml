@@ -24,7 +24,7 @@ jobs:
             
             - name: Validate CF template
               run: |
-                aws cloudformation validate-template --template-body file:://cloudformation/s3-bucket.yaml
+                aws cloudformation validate-template --template-body file://cloudformation/s3-bucket.yaml
             
             - name: Deploy stack
               run: |
