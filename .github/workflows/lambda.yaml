@@ -6,7 +6,7 @@ on:
             - main
         paths:
             - "lambda/**"
-            - ".github/workflows/main.yaml"
+            - ".github/workflows/lambda.yaml"
     workflow_dispatch:
 
 jobs:

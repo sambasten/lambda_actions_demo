@@ -9,7 +9,6 @@ Parameters:
       - test
       - staging
       - prod
-  
 
 Resources:
   MyS3Bucket:
@@ -19,7 +18,7 @@ Resources:
       Tags:
         - Key: Environment
           Value: !Ref Environment
-        - Key: Environment
+        - Key: Purpose
           Value: Github actions testing
 
 Outputs:
