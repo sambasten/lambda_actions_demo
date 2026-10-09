@@ -45,7 +45,7 @@ jobs:
                   })
                     
     clean-up-on-merge:
-        if: github.event.pull_request.merged == true
+        if: github.event.action == 'closed' && github.event.pull_request.merged == true
         runs-on: ubuntu-latest
         steps:
           - name: Configure AWS creds
