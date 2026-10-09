@@ -39,8 +39,8 @@ jobs:
                   github.rest.issues.createComment({
                     issue_number: context.issue.number,
                     owner: context.repo.owner,
-                    repo: context.repo.repo
-                    body: 'CloudFormation test stack deployed. Stack name: r-test-stack-${{github.event.pull_request.number}}'
+                    repo: context.repo.repo,
+                    body: 'CloudFormation test stack deployed. Stack name: pr-test-stack-${{github.event.pull_request.number}}'
                   })
                     
     clean-up-on-merge:
