@@ -57,7 +57,7 @@ jobs:
           - name: Delete test stack
             run: |
               stackname= "pr-test-stack-${{github.event.pull_request.number}}"  
-              aws cloudformation delete-stack --stack-name stackname 
+              aws cloudformation delete-stack --stack-name $stackname 
         
 
 
